@@ -362,15 +362,13 @@ let a14 = {
 
 function f14() {
     out = '';
-    // out += a14[0] + ' ';
     // t = [];
     for (let key in a14) {
         out += `${a14[key][0]} `;
         console.log(out);
-        // console.log(a14);
     }
     document.querySelector('.out-14').innerHTML = out;
-    console.log(out);
+
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -388,7 +386,16 @@ let a15 = {
 };
 
 function f15() {
-
+    out = '';
+    // t = [];
+    for (let key in a14) {
+        for (let i = 0; i < a15[key].length; i++) {
+            // out += `${a15[key]} `;
+            out += a15[key][i] + ' ';
+            console.log(out);
+        }
+    }
+    document.querySelector('.out-15').innerHTML = out;
 }
 
 document.querySelector('.b-15').onclick = f15;
