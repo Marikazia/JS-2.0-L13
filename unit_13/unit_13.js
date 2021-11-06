@@ -388,7 +388,7 @@ let a15 = {
 function f15() {
     out = '';
     // t = [];
-    for (let key in a14) {
+    for (let key in a15) {
         for (let i = 0; i < a15[key].length; i++) {
             // out += `${a15[key]} `;
             out += a15[key][i] + ' ';
@@ -419,7 +419,13 @@ let a16 = {
 }
 
 function f16() {
-
+    out = '';
+    // t = [];
+    for (let key in a16) {
+        out += `${a16[key]['name']} `;
+        console.log(out);
+    }
+    document.querySelector('.out-16').innerHTML = out;
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -444,7 +450,15 @@ let a17 = {
 }
 
 function f17() {
-
+    out = '';
+    // t = [];
+    for (let key in a17) {
+        if (a17[key]['age'] > 30) {
+            out += `${a17[key]['name']} `;
+        }
+        console.log(out);
+    }
+    document.querySelector('.out-17').innerHTML = out;
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -457,10 +471,25 @@ let a18 = {
     "blue": ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
     "green": ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi']
 }
+// let t = d18.includes(i18);
+// out18.innerHTML = t;
+// console.log(t);
 
 function f18() {
-
+    let i18 = document.querySelector('.i-18').value;
+    out = '';
+    // t = '';
+    if (a18[i18]) {
+        console.log(a18[i18]);
+        for (let i = 0; i < a18[i18].length; i++) {
+            out += a18[i18][i] + ' ';
+        }
+    }
+    document.querySelector('.out-18').innerHTML = out;
 }
+
+document.querySelector('.b-18').onclick = f18;
+
 
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
@@ -473,7 +502,36 @@ let a19 = {
 }
 
 function f19() {
+    let i19 = document.querySelector('.i-19').value.toLowerCase();
+    out = '';
+    for (let key in a19) {
+        console.log(a19[key]);
+        for (let i = 0; i < a19[key].length; i++) {
+            if (i19 === a19[key][i].toLowerCase()) {
+                out += key + '';
+            } 
+        }
+    }
+    // newi19 = i19.toLowerCase();
+    // console.log(a19[newi19]);
+    // for (let newi19 in a19 ) {
+    //     for( let i = 0; i < a19[newi19].length; i++) {
+    //         if (a19[newi19][i].toLowerCase() === i19 ) {
+    //             out += a19[newi19]; 
+    //             break;
+    //         }
+    //     }
+    // }
 
+    // t = '';
+    // if (a19[ni19] !== undefined) {
+    //     console.log(a19[i19]);
+    //     for (let ni19 in a19) {
+    //         console.log(a19[ni19]);
+    //         out += a19[i19][i] + ' ';
+    //     }
+    // }
+    document.querySelector('.out-19').innerHTML = out;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -488,7 +546,16 @@ let a20 = {
 }
 
 function f20() {
-
+    out = '';
+    for ( let key in a20) {
+        for ( let i = 0; i < a20[key].length; i++) {
+            if (a20[key][i][1] === 2) {
+                // console.log(a20[key][i]);
+                out += a20[key][i][0] + ' ';
+            }
+        }
+    }
+    document.querySelector('.out-20').innerHTML = out;
 }
 
-document.querySelector('.b-20').onclick = f20
+document.querySelector('.b-20').onclick = f20;
