@@ -92,7 +92,7 @@ let a4 = {
 function f4() {
     let out = ''; 
     for (let key in a4) {
-        out += key + ' ' + a4[key] + '<br>'; 
+        out += key + ' ' + a4[key] + ' <br>'; 
     }
     console.log(out);
     return out;
@@ -136,11 +136,14 @@ let a6 = {
     "b": 17,
     "e": 22
 };
-let i61 = document.querySelector('.i-61').value;
-let i62 = document.querySelector('.i-62').value;
+
 
 function f6() {
+    let i61 = document.querySelector('.i-61').value;
+    let i62 = document.querySelector('.i-62').value;
     a6[i61] = i62;
+
+
     f5(a6, '.out-6')
     // out = '';
     // a6 = {};
